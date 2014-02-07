@@ -6,7 +6,8 @@
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1<%= raw('&appId=' + options[:app_id]) unless options[:app_id].empty? %>";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+</script>
 <% end %>
 
 <fb:like href='<%= options[:url] %>'
@@ -18,3 +19,6 @@
          font='<%= options[:font] %>'
          colorscheme='<%= options[:colorscheme] %>'
          ref='<%= options[:ref] %>' ></fb:like>
+<script>
+  FB.XFBML.parse();
+</script>
